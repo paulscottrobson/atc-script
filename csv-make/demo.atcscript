@@ -1,0 +1,42 @@
+# ************************************************************************************
+#
+#		Script borrowed from somewhere as a demo.
+#		Anything after # is ignored. Blank lines are ignored.
+#
+# ************************************************************************************
+
+#
+#		Some things can be pre-specified 
+#
+$DEPART			EGKK										# departure airport
+$ARRIVE 		EGLL										# arrival airport
+$RUNWAY 		26L											# may have a default runway
+$HOLDING 		C1											# holding point
+$QNH 			1013
+#
+#		Some are user specific, and can be blank or prefilled. Here done for readability.
+#
+$CALLSIGN 		Golf Papa Romeo Sierra Charlie				# Callsign (long)
+$CALLSHORT 		Golf Sierra Charlie							# Callsign (short)
+$LOCATION 		General Apron								# location at departure airport
+#
+#		Some you have to fill in as you go.
+#
+$SQUAWK	
+$ATIS
+#
+#		This is a standard format. [<Speaker>] <Message> A full stop only indicates a gap in the script.
+# 
+[Pilot] 	$DEPART Tower, $CALLSIGN, at $LOCATION, information $ATIS, QNH $QNH, 
+			request engine start
+[ATC] 		$CALLSIGN, $DEPART Tower, start approved.
+[Pilot] 	Start approved $CALLSIGN
+.
+[Pilot]		$DEPART Tower, $CALLSIGN at $LOCATION request taxi to runway
+[ATC] 		$CALLSHORT, $DEPART Tower, taxi to holding point $HOLDING runway $RUNWAY, Squawk Code $SQUAWK
+[Pilot] 	Taxi Holding point $HOLDING runway $RUNWAY squawk $SQUAWK $CALLSHORT 
+.
+[Pilot] 	$CALLSHORT at holding point $HOLDING, ready for departure $RUNWAY
+[ATC] 		$CALLSIGN cleared for take off, runway $RUNWAY
+[Pilot] 	Cleared takeoff, $CALLSIGN
+
