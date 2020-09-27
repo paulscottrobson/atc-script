@@ -58,7 +58,7 @@ class ScriptConverter(object):
 					parts[n] = parts[n][0]+parts[n][2:]
 		parts = [x for x in parts if x != '""']										# remove empty.
 
-		return "=CONCAT("+",".join(parts)+")"
+		return "=CONCATENATE("+",".join(parts)+")"
 	#
 	#		Create substitution hash.
 	#
